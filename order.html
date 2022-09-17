@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Importante para fazer o site responsivo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante</title>
+
+    <!-- Linkagem -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Nav bar começa aqui -->
+    <section class="navBar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" title="Logo">
+                    <img src="images/logo.png" alt="Logo Restaurante" class="img-responsive">
+                </a>
+            </div>
+
+            <div class="menu text-right">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="categorias.html">Categorias</a>
+                    </li>
+                    <li>
+                        <a href="comidas.html">Comidas</a>
+                    </li>
+                    <li>
+                        <a href="#">Contato</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    <!-- Nav bar acaba aqui -->
+
+    <!-- Pesquisa de comida começa aqui -->
+    <section class="food-search">
+        <div class="container">
+            
+            <h2 class="text-center text-white">Falta Pouco!</h2>
+
+            <form action="#" class="order">
+                <fieldset>
+                    <legend>Comida Selecionada</legend>
+
+                    <div class="food-menu-img">
+                        <img src="images/menu-pizza.jpg" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                    </div>
+    
+                    <div class="food-menu-desc">
+                        <h3>Nome da Refeição</h3>
+                        <p class="food-price">R$35.00</p>
+
+                        <div class="order-label">Quantidade</div>
+                        <input type="number" name="qty" class="input-responsive" value="1" required>
+                        
+                    </div>
+
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Informações de Entrega</legend>
+                    <div class="order-label">Nome Completo</div>
+                    <input type="text" name="full-name" placeholder="Ex. Guilherme Monteiro..." class="input-responsive" required>
+
+                    <div class="order-label">Numero de Telefone</div>
+                    <input type="tel" name="contact" placeholder="Ex. 9814xxxxxx..." class="input-responsive" required>
+
+                    <div class="order-label">Email</div>
+                    <input type="email" name="email" placeholder="Ex. hi@guimonteiro.com..." class="input-responsive" required>
+
+                    <div class="order-label">Endereço</div>
+                    <textarea name="address" rows="10" placeholder="Ex. Rua, Cidade, País..." class="input-responsive" required></textarea>
+
+                    <input type="submit" name="submit" value="Confirmar Compra" class="btn btn-primeiro">
+                </fieldset>
+
+            </form>
+
+        </div>
+    </section>
+   <!-- Pesquisa de comida acaba aqui -->
+
+     <!-- Social midias começa aqui -->
+    <section class="social">
+        <div class="container text-center">
+            <ul>
+                <li>
+                    <a href="#"><img src="https://img.icons8.com/fluent/50/000000/facebook-new.png"/></a>
+                </li>
+                <li>
+                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png"/></a>
+                </li>
+                <li>
+                    <a href="#"><img src="https://img.icons8.com/fluent/48/000000/twitter.png"/></a>
+                </li>
+            </ul>
+        </div>
+    </section>
+     <!-- Social midias acaba aqui -->
+
+    <!-- Footer começa aqui -->
+    <section class="footer">
+        <div class="container text-center">
+            <p>All rights reserved. Designed By <a href="https://www.linkedin.com/in/guilherme-monteiro-5a2b51208/">Guilherme Monteiro</a></p>
+        </div>
+    </section>
+    <!-- Footer acaba aqui -->
+</body>
+</html>
