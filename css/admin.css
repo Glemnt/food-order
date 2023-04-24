@@ -1,0 +1,146 @@
+/*
+    Autor: Guilherme Monteiro
+    Tema:  Admin Para o Site de e-Commerce
+    Versão: 1.0
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.wrapper {
+    padding: 1%;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.clearfix {
+    float: none;
+    clear: both;
+}
+
+.tbl-full {
+    width: 100%;
+}
+
+.tbl-30 {
+    width: 40%;
+}
+
+a{
+    text-decoration: none;
+}
+
+table tr th {
+    border-bottom: 1px solid black;
+    padding: 1%;
+}
+
+table tr td {
+    padding: 1%;
+}
+
+.btn-um {
+    background-color: #1e90ff;
+    padding: 1%;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-um:hover {
+    background-color: #3742fa;
+}
+
+.btn-dois {
+    background-color: #7bed9f;
+    padding: 1%;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-dois:hover {
+    background-color: #2ed573;
+}
+
+.btn-danger {
+    background-color: #ff6b81;
+    padding: 1%;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background-color: #ff4757;
+}
+
+.success {
+    color: #2ed573;
+    font-weight: bold;
+}
+
+.error {
+    color: #ff4757;
+    font-weight: bold;
+}
+
+/* CSS para o Menu */
+.menu {
+    border-bottom: 1px solid grey;
+}
+
+.menu ul {
+    list-style-type: none;
+}
+
+.menu ul li {
+    display: inline;
+    padding: 1%;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #ff6b81;
+}
+
+.menu ul li a:hover {
+    color: #ff4757;
+}
+
+/* CSS para a Main */
+.main {
+    background-color: #f1f2f6;
+    padding: 3% 0;
+}
+
+.col-4 {
+    width: 18%;
+    background-color: white;
+    margin: 1%;
+    padding: 2%;
+    float: left;
+}
+
+/* CSS para o Footer */
+.footer {
+    background-color: #ff4757;
+    color: white;
+}
+
+/* CSS para o Login */
+.login {
+    width: 25%;
+    border: 1px solid grey;
+    margin: 10% auto;
+    padding: 2%;
+}
