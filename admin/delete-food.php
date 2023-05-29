@@ -4,22 +4,22 @@
 
     //echo "Delete Food Page";
 
-    if(isset($_GET['id']) && isset($_GET['image_name'])) // Pode Usar tanto '&&' quanto 'AND'  
+    if(isset($_GET['idProduto']) && isset($_GET['nome_imagem'])) // Pode Usar tanto '&&' quanto 'AND'  
     {
         // Processo para Deletar
         // echo "Process to Delete";
 
         // 1. Pegar o ID e o Nome da Imagem
-        $id = $_GET['id'];
-        $image_name = $_GET['image_name'];
+        $idProduto = $_GET['idProduto'];
+        $nome_imagem = $_GET['nome_imagem'];
 
         // 2. Remover a Imagem se Disponível
         // Verificar se a Imagem está disponível ou Não e deletar se Disponível
-        if($image_name != "")
+        if($nome_imagem != "")
         {
             // Tem Imagem e Precisa Remover da Pasta
             // Buscar o Caminho de Origem
-            $path = "../images/food/".$image_name;
+            $path = "../images/food/".$nome_imagem;
 
             // Remover o Arquivo de Imagem da Pasta
             $remove = unlink($path);
@@ -37,7 +37,7 @@
         }
 
         // 3. Remover Refeição do Banco de Dados
-        $sql = "DELETE FROM tbl_food WHERE id=$id";
+        $sql = "DELETE FROM menu WHERE idProduto=$idProduto";
         //Executar a QUERY
         $res = mysqli_query($conn, $sql);
 
