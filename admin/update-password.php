@@ -6,9 +6,9 @@
         <br><br>
 
         <?php
-        if (isset($_GET['id'])) 
+        if (isset($_GET['idAdmin'])) 
         {
-            $id = $_GET['id'];
+            $idAdmin = $_GET['idAdmin'];
         }
         ?>
 
@@ -18,27 +18,27 @@
                 <tr>
                     <td>Senha Atual: </td>
                     <td>
-                        <input type="password" name="current_password" placeholder="Senha atual">
+                        <input type="password" name="senha_atual" placeholder="Senha atual">
                     </td>
                 </tr>
 
                 <tr>
                     <td>Nova Senha: </td>
                     <td>
-                        <input type="password" name="new_password" placeholder="Nova senha">
+                        <input type="password" name="nova_senha" placeholder="Nova senha">
                     </td>
                 </tr>
 
                 <tr>
                     <td>Confirmar Senha: </td>
                     <td>
-                        <input type="password" name="confirm_password" placeholder="Confirmar senha">
+                        <input type="password" name="confirmacao_nova_senha" placeholder="Confirmar senha">
                     </td>
                 </tr>
 
                 <tr>
                     <td colspan="2">
-                        <input type="hidden" name="id" value="<?php echo $id; ?>">
+                        <input type="hidden" name="idAdmin" value="<?php echo $idAdmin; ?>">
                         <input type="submit" name="submit" value="Mudar Senha" class="btn-dois">
                     </td>
                 </tr>
@@ -56,13 +56,13 @@ if (isset($_POST['submit']))
     // echo "Clicked";
 
     // 1. Pegar os dados do formulário
-    $id = $_POST['id'];
-    $current_password = md5($_POST['current_password']);
-    $new_password = md5($_POST['new_password']);
-    $confirm_password = md5($_POST['confirm_password']);
+    $idAdmin = $_POST['idAdmin'];
+    $senha_atual = md5($_POST['senha_atual']);
+    $nova_senha = md5($_POST['nova_senha']);
+    $confirmacao_nova_senha = md5($_POST['confirmacao_nova_senha']);
 
     // 2. Verificar se o ID de Usuário e Senha atuais Existem ou não
-    $sql = "SELECT * FROM tbl_admin WHERE id=$id AND password='$current_password'";
+    $sql = "SELECT * FROM tb_admin WHERE idAdmin=$idAdmin AND senha='$senha_atual'";
 
     // Executar a QUERY
     $res = mysqli_query($conn, $sql);
@@ -78,12 +78,12 @@ if (isset($_POST['submit']))
             // echo "Usuário Encontrado";
 
             // Verificar se a Nova senha e confirmar senha são iguais ou não
-            if ($new_password == $confirm_password) 
+            if ($nova_senha == $confirmacao_nova_senha) 
             {
                 // Atualizar a Senha
-                $sql2 = "UPDATE tbl_admin SET
-                    password = '$new_password'
-                    WHERE id=$id
+                $sql2 = "UPDATE tb_admin SET
+                    senha = '$nova_senha'
+                    WHERE idAdmin=$idAdmin
                 ";
 
                 // Executar a QUERY

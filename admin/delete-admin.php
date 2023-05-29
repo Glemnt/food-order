@@ -4,10 +4,10 @@
     include('../config/constantes.php');
 
     // 1. Pegar o ID do Admin para ser Deletado
-    $id = $_GET['id'];
+    $idAdmin = $_GET['idAdmin'];
 
     // 2. Criar SQL Query para Deletar o Admin
-    $sql = "DELETE FROM tbl_admin WHERE id = $id";
+    $sql = "DELETE FROM tb_admin WHERE idAdmin = $idAdmin";
 
     // Executar a Query
     $res = mysqli_query($conn, $sql);

@@ -8,10 +8,10 @@
 
         <?php
         // 1. Pegar o ID do Admin Selecionado
-        $id = $_GET['id'];
+        $idAdmin = $_GET['idAdmin'];
 
         // 2. Criar um SQL Query para pegar os Detalhes
-        $sql = "SELECT * FROM tbl_admin WHERE id=$id";
+        $sql = "SELECT * FROM tb_admin WHERE idAdmin=$idAdmin";
 
         // Executar a Query
         $res = mysqli_query($conn, $sql);
@@ -26,8 +26,8 @@
                 //echo "Admin Disponível";
                 $row = mysqli_fetch_assoc($res);
 
-                $full_name = $row['full_name'];
-                $username = $row['username'];
+                $nome = $row['nome'];
+                $usuario = $row['usuario'];
             } else {
                 // Redirecionar para a Página "manage-admin"
                 header('location:' . SITEURL . 'admin/manage-admin.php');
@@ -42,20 +42,20 @@
                 <tr>
                     <td>Nome Completo: </td>
                     <td>
-                        <input type="text" name="full_name" value="<?php echo $full_name; ?>">
+                        <input type="text" name="nome" value="<?php echo $nome; ?>">
                     </td>
                 </tr>
 
                 <tr>
-                    <td>Username: </td>
+                    <td>Usuário: </td>
                     <td>
-                        <input type="text" name="username" value="<?php echo $username; ?>">
+                        <input type="text" name="usuario" value="<?php echo $usuario; ?>">
                     </td>
                 </tr>
 
                 <tr>
                     <td colspan="2">
-                        <input type="hidden" name="id" value="<?php echo $id; ?>">
+                        <input type="hidden" name="idAdmin" value="<?php echo $idAdmin; ?>">
                         <input type="submit" name="submit" value="Update Admin" class="btn-dois">
                     </td>
                 </tr>
@@ -70,15 +70,15 @@
 if (isset($_POST['submit'])) {
     // echo "Botão Clicado";
     // Pegar todos os valores do formulário para o Update
-    $id = $_POST['id'];
-    $full_name = $_POST['full_name'];
-    $username = $_POST['username'];
+    $idAdmin = $_POST['idAdmin'];
+    $nome = $_POST['nome'];
+    $usuario = $_POST['usuario'];
 
     // Criar um SQL Query para dar Update Admin
-    $sql = "UPDATE tbl_admin SET
-            full_name = '$full_name',
-            username = '$username' 
-            WHERE id='$id'
+    $sql = "UPDATE tb_admin SET
+            nome = '$nome',
+            usuario = '$usuario' 
+            WHERE idAdmin='$idAdmin'
             ";
 
     // Executar a Query

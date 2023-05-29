@@ -19,22 +19,22 @@
             <table class="tbl-30">
                 <tr>
                     <td>Nome Completo: </td>
-                    <td><input type="text" name="full_name" placeholder="Escreva Seu Nome"></td>
+                    <td><input type="text" name="nome" placeholder="Escreva Seu Nome"></td>
                 </tr>
 
                 <tr>
-                    <td>Username: </td>
-                    <td><input type="text" name="username" placeholder="Seu Usuário"></td>
+                    <td>Usuário: </td>
+                    <td><input type="text" name="usuario" placeholder="Seu Usuário"></td>
                 </tr>
 
                 <tr>
                     <td>Senha: </td>
-                    <td><input type="password" name="password" placeholder="Sua Senha"></td>
+                    <td><input type="password" name="senha" placeholder="Sua Senha"></td>
                 </tr>
 
                 <tr>
                     <td colspan="2">
-                        <input type="submit" name="submit" value="Add Admin" class="btn-dois">
+                        <input type="submit" name="submit" value="Adicionar administrador" class="btn-dois">
                     </td>
                 </tr>
 
@@ -57,15 +57,15 @@ if (isset($_POST['submit']))
     // echo "Botão Clicado";
 
     // 1. Pegar os Dados do Formulário
-    $full_name = $_POST['full_name'];
-    $username = $_POST['username'];
-    $password = md5($_POST['password']); // Senha Encriptada com MD5
+    $nome = $_POST['nome'];
+    $usuario = $_POST['usuario'];
+    $senha = md5($_POST['senha']); // Senha Encriptada com MD5
 
     // 2. SQL Query para salvar os dados no Banco de Dados
-    $sql = "INSERT INTO tbl_admin SET
-        full_name = '$full_name',
-        username = '$username',
-        password = '$password'
+    $sql = "INSERT INTO tb_admin SET
+        nome = '$nome',
+        usuario = '$usuario',
+        senha = '$senha'
     ";
 
     // 3. Exectando a Query e salvando os Dados no Banco 

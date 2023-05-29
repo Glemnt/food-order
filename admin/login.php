@@ -39,10 +39,10 @@
         <!-- Formulário de Login Começa Aqui -->
         <form action="" method="POST" class="text-center">
             Usuário: <br>
-            <input type="text" name="username" placeholder="Username..."><br><br>
+            <input type="text" name="usuario" placeholder="Username..."><br><br>
 
             Senha: <br>
-            <input type="password" name="password" placeholder="Password..."><br><br>
+            <input type="password" name="senha" placeholder="Password..."><br><br>
 
             <input type="submit" name="submit" value="Login" class="btn-um">
             <br><br>
@@ -66,14 +66,14 @@ if (isset($_POST['submit']))
     // 1. Pegar os Dados do formulário de Login
     
     // $username = $_POST['username'];
-    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $usuario = mysqli_real_escape_string($conn, $_POST['usuario']);
     
     // $password = md5($_POST['password']);
-    $raw_password = md5($_POST['password']);
-    $password = mysqli_real_escape_string($conn, $raw_password);
+    $raw_password = md5($_POST['senha']);
+    $senha = mysqli_real_escape_string($conn, $raw_password);
 
     // SQL para Verificar se o Usuário com username e senha existe ou não
-    $sql = "SELECT * FROM tbl_admin WHERE username='$username' AND password='$password'";
+    $sql = "SELECT * FROM tb_admin WHERE usuario='$usuario' AND senha='$senha'";
 
     // Executar a QUERY
     $res = mysqli_query($conn, $sql);
@@ -85,7 +85,7 @@ if (isset($_POST['submit']))
     {
         // Usuário Existe e Login Funciona
         $_SESSION['login'] = "<div class='success'>Login Successful</div>";
-        $_SESSION['user'] = $username; // Para Verificar se o Usuário está logado ou não e o Logout vai unsetar ele
+        $_SESSION['user'] = $usuario; // Para Verificar se o Usuário está logado ou não e o Logout vai unsetar ele
 
         // Redirecionar para Home Page/Dashboard
         header('location:'.SITEURL.'admin/');

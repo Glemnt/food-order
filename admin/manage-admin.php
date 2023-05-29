@@ -62,7 +62,7 @@
 
             <?php
             // Query para definir todos os ADM
-            $sql = "SELECT * FROM tbl_admin";
+            $sql = "SELECT * FROM tb_admin";
 
             // Executar a Query
             $res = mysqli_query($conn, $sql);
@@ -86,21 +86,21 @@
                         // O Loop do while vai rodar desde que se tenha Dados no Banco
 
                         // Obter Dados Individuais
-                        $id = $rows['id'];
-                        $full_name = $rows['full_name'];
-                        $username = $rows['username'];
+                        $idAdmin = $rows['idAdmin'];
+                        $nome = $rows['nome'];
+                        $usuario = $rows['usuario'];
 
                         // Mostrar os Valores na Tabela
             ?>
 
                         <tr>
                             <td><?php echo $sn++; ?>. </td>
-                            <td><?php echo $full_name; ?></td>
-                            <td><?php echo $username; ?></td>
+                            <td><?php echo $nome; ?></td>
+                            <td><?php echo $usuario; ?></td>
                             <td>
-                                <a href="<?php echo SITEURL; ?>admin/update-password.php?id=<?php echo $id; ?>" class="btn-um">Chage Password</a>
-                                <a href="<?php echo SITEURL; ?>admin/update-admin.php?id=<?php echo $id; ?>" class="btn-dois">Update Admin</a>
-                                <a href="<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>" class="btn-danger">Delete Admin</a>
+                                <a href="<?php echo SITEURL; ?>admin/update-password.php?idAdmin=<?php echo $idAdmin; ?>" class="btn-um">Chage Password</a>
+                                <a href="<?php echo SITEURL; ?>admin/update-admin.php?idAdmin=<?php echo $idAdmin; ?>" class="btn-dois">Update Admin</a>
+                                <a href="<?php echo SITEURL; ?>admin/delete-admin.php?idAdmin=<?php echo $idAdmin; ?>" class="btn-danger">Delete Admin</a>
                             </td>
                         </tr>
 
