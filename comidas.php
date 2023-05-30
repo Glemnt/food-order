@@ -73,7 +73,7 @@
                                 </p>
                                 <br>
 
-                                <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $idProduto; ?>" class="btn btn-primeiro">Peça Agora</a>
+                                <a href="<?php echo SITEURL; ?>order.php?idProduto=<?php echo $idProduto; ?>" class="btn btn-primeiro">Peça Agora</a>
                             </div>
                         </div>
 
