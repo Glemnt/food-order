@@ -6,7 +6,7 @@
         if(isset($_GET['food_id']))
         {
             // Pegar o id da Refeição Selecionada
-            $food_id = $_GET['food_id'];
+            $idProduto = $_GET['food_id'];
 
             // Pegar os Detalhes da Refeição Selecionada
             $sql = "SELECT * FROM tbl_food WHERE id=$food_id";
@@ -24,9 +24,9 @@
                 // Pegar os Dados do Banco
                 $row = mysqli_fetch_assoc($res);
 
-                $title = $row['title'];
-                $price = $row['price'];
-                $image_name = $row['image_name'];
+                $nome = $row['title'];
+                $preco = $row['price'];
+                $nome_imagem = $row['image_name'];
             }
             else
             {
@@ -56,7 +56,7 @@
                     <div class="food-menu-img">
                         <?php 
                             // Verificar se a Imagem está Disponivel ou não
-                            if($image_name == "")
+                            if($nome_imagem == "")
                             {
                                 // Imagem Não disponivel
                                 echo "<div class='error'>Imagem não disponível</div>";
@@ -65,7 +65,7 @@
                             {
                                 // Imagem Disponivel
                                 ?>
-                                <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                                <img src="<?php echo SITEURL; ?>images/food/<?php echo $nome_imagem; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
                                 <?php
                             }
                         ?>
