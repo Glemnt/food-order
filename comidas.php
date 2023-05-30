@@ -23,7 +23,7 @@
             <?php 
             
                 // Mostrar Comidas que estão ativas
-                $sql = "SELECT * FROM tbl_food WHERE active='Sim'";
+                $sql = "SELECT * FROM menu WHERE ativo='Sim'";
 
                 // Executar a QUERY
                 $res = mysqli_query($conn, $sql);
