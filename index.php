@@ -147,14 +147,14 @@
                   </div>
 
                   <div class="food-menu-desc">
-                      <h4><?php echo $title; ?></h4>
-                      <p class="food-price">R$<?php echo $price; ?></p>
+                      <h4><?php echo $nome; ?></h4>
+                      <p class="food-price">R$<?php echo $preco; ?></p>
                       <p class="food-detail">
-                          <?php echo $description; ?>
+                          <?php echo $descricao; ?>
                       </p>
                       <br>
 
-                      <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id; ?>" class="btn btn-primeiro">Peça Agora</a>
+                      <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $idProduto; ?>" class="btn btn-primeiro">Peça Agora</a>
                   </div>
               </div>
 
