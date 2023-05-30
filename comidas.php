@@ -38,18 +38,18 @@
                     while($row=mysqli_fetch_assoc($res))
                     {
                         // Pegar o Valor
-                        $id = $row['id'];
-                        $title = $row['title'];
-                        $description = $row['description'];
-                        $price = $row['price'];
-                        $image_name = $row['image_name'];
+                        $idProduto = $row['id'];
+                        $nome = $row['title'];
+                        $descricao = $row['description'];
+                        $preco = $row['price'];
+                        $nome_imagem = $row['image_name'];
                         ?>
 
                         <div class="food-menu-box">
                             <div class="food-menu-img">
                                 <?php 
                                     // Verificar se imagem esta disponivel ou não
-                                    if($image_name == "")
+                                    if($nome_imagem == "")
                                     {
                                         // Imagem Não disponivel
                                         echo "<div class='error'>Imagem não disponível</div>";
@@ -58,7 +58,7 @@
                                     {
                                         // Imagem Disponivel
                                         ?>
-                                        <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                                        <img src="<?php echo SITEURL; ?>images/food/<?php echo $nome_imagem; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
                                         <?php
                                     }
                                 ?>
@@ -66,14 +66,14 @@
                             </div>
 
                             <div class="food-menu-desc">
-                                <h4><?php echo $title; ?></h4>
-                                <p class="food-price">R$<?php echo $price; ?></p>
+                                <h4><?php echo $nome; ?></h4>
+                                <p class="food-price">R$<?php echo $preco; ?></p>
                                 <p class="food-detail">
-                                    <?php echo $description; ?>
+                                    <?php echo $descricao; ?>
                                 </p>
                                 <br>
 
-                                <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id; ?>" class="btn btn-primeiro">Peça Agora</a>
+                                <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $idProduto; ?>" class="btn btn-primeiro">Peça Agora</a>
                             </div>
                         </div>
 
